@@ -17,6 +17,10 @@ export class AppComponent {
     ];
   }
 
+  sortedPonts(): Pont[] {
+    return this.ponts.sort((a: Pont, b: Pont) => b.votes - a.votes);
+  }
+
   addPont(title: HTMLInputElement, where: HTMLInputElement, what: HTMLInputElement, category: HTMLInputElement): boolean {
     console.log(`Adding pont: title = ${title.value}; where = ${where.value}; what = ${what.value}; category = ${category.value}`);
     this.ponts.push(new Pont(title.value, where.value, what.value, category.value, 0));
