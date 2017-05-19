@@ -1,0 +1,12 @@
+<div class="card">
+  <h3>
+    {{ pont.title }}
+  </h3>
+  <p>{{ pont.what }}</p>
+  <p>@{{ pont.where }}</p>
+  <p>
+    {{ pont.votes }} Points 
+    <a href (click)="voteUp()">Upvote</a> | 
+    <a href (click)="voteDown()">Downvote</a>
+  </p>
+</div>
