@@ -2,18 +2,18 @@ import { Component } from '@angular/core';
 import { Pont } from './pont/pont.model';
 
 @Component({
-  selector: 'app-root',
+  selector: 'pont-app',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class PontApp {
   ponts: Pont[];
 
   constructor() {
     this.ponts = [
-      new Pont('Breakfast', 'Papillon', 'Sandwich club - 17 lei', 'Food', 0),
-      new Pont('Best Car', 'Audi', 'Audi A5 Sportback - 30000$', 'Car', 0),
-      new Pont('Parachute', 'Hangariada', '100$ per person', 'Adventure', 0)
+      new Pont('Breakfast', 'Papillon', 'Sandwich club - 17 lei', 'Food', 15),
+      new Pont('Best Car', 'Audi', 'Audi A5 Sportback - 30000$', 'Car', 5),
+      new Pont('Parachute', 'Hangariada', '100$ per person', 'Adventure', 8)
     ];
   }
 
@@ -29,5 +29,9 @@ export class AppComponent {
     what.value = '';
     category.value = '';
     return false;
+  }
+
+  pontWasSelected(pont: Pont): void {
+    console.log('Pont clicked: ' + pont);
   }
 }

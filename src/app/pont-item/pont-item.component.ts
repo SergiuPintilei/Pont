@@ -8,14 +8,14 @@ import { Pont } from '../pont/pont.model';
 })
 export class PontItemComponent implements OnInit {
   @Input() pont: Pont;
+  toggleLikeText = 'Like';
 
-  voteUp(): boolean {
-    this.pont.voteUp();
-    return false;
-  }
-
-  voteDown(): boolean {
-    this.pont.voteDown();
+  toggleLike(): boolean {
+    if (this.pont.toggleLike()) {
+      this.toggleLikeText = 'Unlike';
+    } else {
+      this.toggleLikeText = 'Like';
+    }
     return false;
   }
 

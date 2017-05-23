@@ -1,34 +1,32 @@
-<!--<pont-search></pont-search>-->
+<div class="pont-app">
+  <h1>Pont</h1>
+  <!--<pont-search></pont-search>-->
+  <!--<form>
+    <h3>Add Pont</h3>
+    <div>
+      <label for="title">Title:</label>
+      <input name="title" #newTitle>
+    </div>
+    <div>
+      <label for="where">Where</label>
+      <input name="where" #newWhere>
+    </div>
+    <div>
+      <label for="what">What</label>
+      <input name="what" #newWhat>
+    </div>
+    <div>
+      <label for="category">Category</label>
+      <input name="category" #newCategory>
+    </div>
+    <button (click)="addPont(newTitle, newWhere, newWhat, newCategory)">Submit</button>
+  </form>
+  <br/>-->
 
-<form>
-  <h3>Add Pont</h3>
-  <div>
-    <label for="title">Title:</label>
-    <input name="title" #newTitle>
-  </div>
-  <div>
-    <label for="where">Where</label>
-    <input name="where" #newWhere>
-  </div>
-  <div>
-    <label for="what">What</label>
-    <input name="what" #newWhat>
-  </div>
-  <div>
-    <label for="category">Category</label>
-    <input name="category" #newCategory>
-  </div>
-  <button (click)="addPont(newTitle, newWhere, newWhat, newCategory)">
-  Submit 
-  </button>
-</form>
-<br/>
-<input type="text" placeholder="Search" />
-<!--<pont-item-list></pont-item-list>-->
+  <!--<input type="text" placeholder="Search" />-->
 
-<div>
-  <pont-item 
-    *ngFor="let pont of sortedPonts()" 
-    [pont]="pont">
-  </pont-item>
+  <pont-item-list 
+    [pontItems]="sortedPonts()">
+    <!--(onPontSelected)="pontWasSelected($event)"-->
+  </pont-item-list>
 </div>

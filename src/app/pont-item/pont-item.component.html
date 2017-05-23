@@ -9,8 +9,7 @@
     <hr/>
     <p>
       {{ pont.votes }} Points
-      <a href (click)="voteUp()">Upvote</a> |
-      <a href (click)="voteDown()">Downvote</a>
+      <a href (click)="toggleLike()">{{ toggleLikeText }}</a>
     </p>
   </div>
 </div>

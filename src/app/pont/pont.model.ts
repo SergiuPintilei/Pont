@@ -1,23 +1,23 @@
 export class Pont {
-    title: string;
-    where: string;
-    what: string;
-    category: string;
-    votes: number;
+    liked = false;
 
-    constructor(title: string, where: string, what: string, category: string, votes?: number) {
-        this.title = title;
-        this.where = where;
-        this.what = what;
-        this.category = category;
-        this.votes = votes || 0;
+    constructor(
+        public title: string,
+        public where: string,
+        public what: string,
+        public category: string,
+        public votes: number = 0,
+        public imageUrl?: string) {
     }
 
-    voteUp(): void {
-        this.votes++;
-    }
-
-    voteDown(): void {
-        this.votes--;
+    toggleLike(): boolean {
+        this.liked = !this.liked;
+        if (this.liked) {
+            this.votes++;
+            return true;
+        } else {
+            this.votes--;
+            return false;
+        }
     }
 }
