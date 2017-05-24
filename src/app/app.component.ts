@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Pont } from './pont/pont.model';
+import { Pont } from 'app/pont/pont.model';
 
 @Component({
   selector: 'pont-app',
@@ -11,9 +11,9 @@ export class PontApp {
 
   constructor() {
     this.ponts = [
-      new Pont('Breakfast', 'Papillon', 'Sandwich club - 17 lei', 'Food', 15),
-      new Pont('Best Car', 'Audi', 'Audi A5 Sportback - 30000$', 'Car', 5),
-      new Pont('Parachute', 'Hangariada', '100$ per person', 'Adventure', 8)
+      new Pont('Breakfast', 'Papillon', 'Sandwich club', 'Food', 17, 15, 'https://i.ytimg.com/vi/ScMzIvxBSi4/maxresdefault.jpg'),
+      new Pont('Best Car', 'Audi', 'Audi A5 Sportback', 'Car', 30000, 5),
+      new Pont('Parachute', 'Hangariada', 'Adventure time!', 'Adventure', 100, 8, 'https://s-media-cache-ak0.pinimg.com/736x/6c/c5/15/6cc515743ba301bdd024a4ed06375464.jpg')
     ];
   }
 
@@ -22,7 +22,6 @@ export class PontApp {
   }
 
   addPont(title: HTMLInputElement, where: HTMLInputElement, what: HTMLInputElement, category: HTMLInputElement): boolean {
-    console.log(`Adding pont: title = ${title.value}; where = ${where.value}; what = ${what.value}; category = ${category.value}`);
     this.ponts.push(new Pont(title.value, where.value, what.value, category.value, 0));
     title.value = '';
     where.value = '';

@@ -6,6 +6,7 @@ export class Pont {
         public where: string,
         public what: string,
         public category: string,
+        public price: number,
         public votes: number = 0,
         public imageUrl?: string) {
     }

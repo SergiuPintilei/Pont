@@ -7,13 +7,17 @@ import { PontApp } from './app.component';
 import { PontSearchComponent } from './pont-search/pont-search.component';
 import { PontItemComponent } from './pont-item/pont-item.component';
 import { PontItemListComponent } from './pont-item-list/pont-item-list.component';
+import { PontImageComponent } from './pont-image/pont-image.component';
+import { PontPriceDisplayComponent } from './pont-price-display/pont-price-display.component';
 
 @NgModule({
   declarations: [
     PontApp,
     PontSearchComponent,
     PontItemComponent,
-    PontItemListComponent
+    PontItemListComponent,
+    PontImageComponent,
+    PontPriceDisplayComponent
   ],
   imports: [
     BrowserModule,
@@ -23,4 +27,4 @@ import { PontItemListComponent } from './pont-item-list/pont-item-list.component
   providers: [],
   bootstrap: [PontApp]
 })
-export class AppModule { }
+export class PontAppModule { }

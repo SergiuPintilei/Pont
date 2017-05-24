@@ -1,15 +1,16 @@
 <div class="card">
-  <img src="https://i.ytimg.com/vi/ScMzIvxBSi4/maxresdefault.jpg">
-  <div class="content-wrap">
-    <h3>
-      {{ pont.title }}
-    </h3>
-    <p>{{ pont.what }}</p>
-    <p>@{{ pont.where }}</p>
-    <hr/>
-    <p>
-      {{ pont.votes }} Points
-      <a href (click)="toggleLike()">{{ toggleLikeText }}</a>
-    </p>
+  <pont-image *ngIf="pont.imageUrl" [pont]="pont"></pont-image>
+  <div class="card-content">
+    <span class="timestamp">1 day ago</span>
+    <span class="title">{{ pont.title }}</span>
+    <p class="content">
+      {{ pont.what }} 
+      <pont-price-display [price]="pont.price"></pont-price-display>
+       @{{ pont.where }}
+      </p>
+    <div class="card-footer">
+      <div class="left">{{ pont.votes }} Points</div>
+      <div class="right"><a href (click)="toggleLike()">{{ toggleLikeText }}</a></div>
+    </div>
   </div>
 </div>

@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Pont } from '../pont/pont.model';
+import { Pont } from 'app/pont/pont.model';
 
 @Component({
   selector: 'pont-item',

@@ -1,6 +1,8 @@
 <div>
   <pont-item 
     *ngFor="let pont of pontItems" 
-    [pont]="pont">
+    [pont]="pont"
+    (click)="clicked(pont)"
+    [class.selected]="isSelected(pont)">
   </pont-item>
 </div>
