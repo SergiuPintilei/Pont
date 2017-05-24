@@ -1,0 +1,34 @@
+<div>
+  <h3>Add Pont</h3>
+  <form [formGroup]="myForm" (ngSubmit)="onSubmit(myForm.value)">
+    <div [class.error]="!title.valid && title.touched">
+      <label for="titleInput">Title</label>
+      <input type="text" id="titleInput" placeholder="Pont's title" [formControl]="title">
+      <div *ngIf="!title.valid" class="error-message">Title is invalid</div>
+      <div *ngIf="title.hasError('required')" class="error-message">Title is required</div>
+      <div *ngIf="!myForm.valid" class="error-message">Form is invalid</div>
+    </div>
+    <div>
+      <label for="placeInput">Place</label>
+      <input type="text" id="placeInput" placeholder="Pont's place"  [formControl]="place">
+    </div>
+    <div>
+      <label for="whatInput">What</label>
+      <input type="text" id="whatInput" placeholder="Pont's description"  [formControl]="what">
+    </div>
+    <div [class.error]="!category.valid && category.touched">
+      <label for="categoryInput">Category</label>
+      <input type="text" id="categoryInput" placeholder="Pont's category" [formControl]="category">
+      <div *ngIf="category.hasError('required')" class="error-message">Category is required</div>
+    </div>
+    <div>
+      <label for="priceInput">Price</label>
+      <input type="number" id="priceInput" placeholder="Pont's price"  [formControl]="price">
+    </div>
+    <div>
+      <label for="imageInput">Image</label>
+      <input type="text" id="imageInput" placeholder="Pont's image"  [formControl]="image">
+    </div>
+    <button type="submit">Submit</button>
+  </form>
+</div>

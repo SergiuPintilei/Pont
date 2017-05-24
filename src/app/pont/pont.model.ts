@@ -3,12 +3,14 @@ export class Pont {
 
     constructor(
         public title: string,
-        public where: string,
+        public place: string,
         public what: string,
         public category: string,
         public price: number,
+        public imageUrl?: string,
         public votes: number = 0,
-        public imageUrl?: string) {
+        public dateAdded: Date = new Date(),
+        public user?: any) {
     }
 
     toggleLike(): boolean {

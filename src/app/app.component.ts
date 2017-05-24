@@ -11,9 +11,10 @@ export class PontApp {
 
   constructor() {
     this.ponts = [
-      new Pont('Breakfast', 'Papillon', 'Sandwich club', 'Food', 17, 15, 'https://i.ytimg.com/vi/ScMzIvxBSi4/maxresdefault.jpg'),
-      new Pont('Best Car', 'Audi', 'Audi A5 Sportback', 'Car', 30000, 5),
-      new Pont('Parachute', 'Hangariada', 'Adventure time!', 'Adventure', 100, 8, 'https://s-media-cache-ak0.pinimg.com/736x/6c/c5/15/6cc515743ba301bdd024a4ed06375464.jpg')
+      new Pont('Breakfast', 'Papillon', 'Sandwich club', 'Food', 17, 'https://i.ytimg.com/vi/ScMzIvxBSi4/maxresdefault.jpg', 15),
+      new Pont('Best Car', 'Audi', 'Audi A5 Sportback', 'Car', 30000, '', 5),
+      new Pont('Parachute', 'Hangariada', 'Adventure time!', 'Adventure', 100,
+        'https://s-media-cache-ak0.pinimg.com/736x/6c/c5/15/6cc515743ba301bdd024a4ed06375464.jpg', 8)
     ];
   }
 
@@ -21,12 +22,8 @@ export class PontApp {
   //   return this.ponts.sort((a: Pont, b: Pont) => b.votes - a.votes);
   // }
 
-  addPont(title: HTMLInputElement, where: HTMLInputElement, what: HTMLInputElement, category: HTMLInputElement): boolean {
-    this.ponts.push(new Pont(title.value, where.value, what.value, category.value, 0));
-    title.value = '';
-    where.value = '';
-    what.value = '';
-    category.value = '';
+  addPont(event: any): boolean {
+    this.ponts.push(new Pont(event.title, event.place, event.what, event.category, event.price, event.image));
     return false;
   }
 
