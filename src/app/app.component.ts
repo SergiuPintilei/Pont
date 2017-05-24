@@ -4,7 +4,7 @@ import { Pont } from 'app/pont/pont.model';
 @Component({
   selector: 'pont-app',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.less']
 })
 export class PontApp {
   ponts: Pont[];
@@ -17,9 +17,9 @@ export class PontApp {
     ];
   }
 
-  sortedPonts(): Pont[] {
-    return this.ponts.sort((a: Pont, b: Pont) => b.votes - a.votes);
-  }
+  // sortedPonts(): Pont[] {
+  //   return this.ponts.sort((a: Pont, b: Pont) => b.votes - a.votes);
+  // }
 
   addPont(title: HTMLInputElement, where: HTMLInputElement, what: HTMLInputElement, category: HTMLInputElement): boolean {
     this.ponts.push(new Pont(title.value, where.value, what.value, category.value, 0));

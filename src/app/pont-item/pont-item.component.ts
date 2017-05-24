@@ -4,7 +4,7 @@ import { Pont } from 'app/pont/pont.model';
 @Component({
   selector: 'pont-item',
   templateUrl: './pont-item.component.html',
-  styleUrls: ['./pont-item.component.css']
+  styleUrls: ['./pont-item.component.less']
 })
 export class PontItemComponent implements OnInit {
   @Input() pont: Pont;
